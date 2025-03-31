@@ -36,5 +36,5 @@ jobs:
       #   run: pwd
 
       - name: Run Tests
-        run: dotnet test ClassLibrary1.sln
+        run: dotnet test
       

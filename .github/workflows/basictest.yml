@@ -32,5 +32,8 @@ jobs:
       # - name: Verify SQL Server image is available in WSL2
       #   run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"
 
+      - name: Folfer
+        run: dir
+
       - run: dotnet test ClassLibrary1.sln
       

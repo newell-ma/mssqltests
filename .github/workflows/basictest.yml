@@ -29,8 +29,8 @@ jobs:
       - name: Pre-pull SQL Server image inside WSL2
         run: wsl docker pull mcr.microsoft.com/mssql/server:2022-latest
 
-      - name: Verify SQL Server image is available in WSL2
-        run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"
+      # - name: Verify SQL Server image is available in WSL2
+      #   run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"
 
       - run: dotnet test ClassLibrary1.sln
       

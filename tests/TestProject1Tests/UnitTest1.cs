@@ -9,7 +9,7 @@ public class Tests
     [OneTimeSetUp]
     public async Task BeforeAnyTests()
     {
-        //Environment.SetEnvironmentVariable("DOCKER_HOST", "unix:///var/run/docker.sock");
+        Environment.SetEnvironmentVariable("DOCKER_HOST", "unix:///var/run/docker.sock");
         _dbContainer = new MsSqlBuilder()
           .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
           .Build();

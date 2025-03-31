@@ -3,10 +3,16 @@ name: Tests
 on: push
 
 jobs:
+
+
   tests:
     name: Unit Testing
-    runs-on: windows-latest
+    runs-on: windows-2025
     steps:
+    # Step 1: Verify Docker Installation
+      - name: Check Docker Version
+        run: wsl docker --version
+
       - uses: actions/checkout@v2.1.0
       - run: dotnet test
       

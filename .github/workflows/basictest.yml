@@ -10,30 +10,30 @@ jobs:
     runs-on: windows-2025
     steps:
     # Step 1: Verify Docker Installation
-      - name: Enable WSL2 and install dependencies
-        run: |
-          wsl --update
-          wsl --install -d Ubuntu
-          wsl sudo apt-get update -y
-          wsl sudo apt-get install -y docker.io
-          wsl --list --verbose
+      # - name: Enable WSL2 and install dependencies
+      #   run: |
+      #     wsl --update
+      #     wsl --install -d Ubuntu
+      #     wsl sudo apt-get update -y
+      #     wsl sudo apt-get install -y docker.io
+      #     wsl --list --verbose
 
-      - name: Start Docker inside WSL2
-        run: |
-          wsl sudo service docker start
-          echo "DOCKER_HOST=unix:///var/run/docker.sock" >> $GITHUB_ENV
+      # - name: Start Docker inside WSL2
+      #   run: |
+      #     wsl sudo service docker start
+      #     echo "DOCKER_HOST=unix:///var/run/docker.sock" >> $GITHUB_ENV
 
-      - name: Check Docker is running
-        run: wsl docker info
+      # - name: Check Docker is running
+      #   run: wsl docker info
 
-      - name: Pre-pull SQL Server image inside WSL2
-        run: wsl docker pull mcr.microsoft.com/mssql/server:2022-latest
+      # - name: Pre-pull SQL Server image inside WSL2
+      #   run: wsl docker pull mcr.microsoft.com/mssql/server:2022-latest
 
-      # - name: Verify SQL Server image is available in WSL2
-      #   run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"
+      # # - name: Verify SQL Server image is available in WSL2
+      # #   run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"
 
-      - name: Folfer
-        run: pwd
+      # - name: Folfer
+      #   run: pwd
 
       - name: Run Tests
         run: dotnet test ClassLibrary1.sln

@@ -33,7 +33,8 @@ jobs:
       #   run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"
 
       - name: Folfer
-        run: dir
+        run: pwd
 
-      - run: dotnet test ClassLibrary1.sln
+      - name: Run Tests
+        run: dotnet test ClassLibrary1.sln
       

@@ -11,7 +11,6 @@ public class Tests
     {
         _dbContainer = new MsSqlBuilder()
           .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
-          .WithAcceptLicenseAgreement(true)
           .Build();
         await _dbContainer.StartAsync();
 

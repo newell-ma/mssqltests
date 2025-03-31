@@ -26,6 +26,9 @@ jobs:
       - name: Check Docker is running
         run: wsl docker info
 
+      - name: Pre-pull SQL Server image inside WSL2
+        run: wsl docker pull mcr.microsoft.com/mssql/server:2022-latest
+
       - uses: actions/checkout@v2.1.0
       - run: dotnet test
       

@@ -11,7 +11,11 @@ jobs:
     steps:
     # Step 1: Verify Docker Installation
       - name: Check Docker Version
-        run: wsl --list --verbose
+        run: |
+          wsl --update
+          wsl --install -d Ubuntu
+          wsl sudo apt-get update -y
+          wsl sudo apt-get install -y docker.io
 
       - uses: actions/checkout@v2.1.0
       - run: dotnet test

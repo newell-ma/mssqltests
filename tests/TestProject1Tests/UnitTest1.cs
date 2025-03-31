@@ -9,6 +9,7 @@ public class Tests
     [OneTimeSetUp]
     public async Task BeforeAnyTests()
     {
+
         _dbContainer = new MsSqlBuilder()
           .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
           .Build();

@@ -31,8 +31,7 @@ jobs:
 
       - name: Manually start SQL Server inside WSL2 (Debug)
         run: |
-          wsl docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong!Passw0rd' \
-            -p 1433:1433 --name test-sql -d mcr.microsoft.com/mssql/server:2022-latest
+          wsl docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong!Passw0rd' -p 1433:1433 --name test-sql -d mcr.microsoft.com/mssql/server:2022-latest
 
       # - name: Verify SQL Server image is available in WSL2
       #   run: wsl bash -c "docker images | grep mcr.microsoft.com/mssql/server"

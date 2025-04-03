@@ -1,6 +1,7 @@
 name: Db Local
 jobs:
   build:
+  name: blah
   runs-on: windows-latest
   steps:
     - name: Checking local db version

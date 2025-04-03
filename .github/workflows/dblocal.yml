@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: blah
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - name: Checking local db version
         run: |
